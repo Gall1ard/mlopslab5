@@ -2,7 +2,7 @@ import pandas as pd
 from sklearn.preprocessing import OrdinalEncoder
 
 def download_data():
-    df = pd.read_csv('../data/iris.csv', delimiter = ',')
+    df = pd.read_csv('./data/iris.csv', delimiter = ',')
     return df
 
 def clear_data(frame):
@@ -26,7 +26,7 @@ def clear_data(frame):
     Ordinal_encoded = ordinal.transform(df[cat_columns])
     df_ordinal = pd.DataFrame(Ordinal_encoded, columns=cat_columns)
     df[cat_columns] = df_ordinal[cat_columns]
-    df.to_csv("final_iris.csv", index=False)
+    df.to_csv("./data/final_iris.csv", index=False)
     return True
 
 

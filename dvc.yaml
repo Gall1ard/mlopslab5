@@ -1,24 +1,24 @@
 stages:
   clean:
-    cmd: python src/clean.py
+    cmd: python src/stages/clean.py
     deps:
     - data/iris.csv
-    - src/clean.py
+    - src/stages/clean.py
     outs:
     - data/final_iris.csv
   data_split:
-    cmd: python src/data_split.py
+    cmd: python src/stages/data_split.py
     deps:
     - data/final_iris.csv
-    - src/data_split.py
+    - src/stages/data_split.py
     outs:
     - data/test_iris.csv
     - data/train_iris.csv
   train:
-    cmd: python src/train.py
+    cmd: python src/stages/train.py
     deps:
     - data/test_iris.csv
     - data/train_iris.csv
-    - src/train.py
+    - src/stages/train.py
     outs:
     - models/iris.joblib

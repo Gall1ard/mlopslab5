@@ -1,6 +1,7 @@
+import os
 import sys
-from src.model_scripts import train_model
-
+sys.path.append(os.getcwd())
+from src.model_scripts.train_model import train_model
 
 if __name__ == "__main__":
     train_model()
